@@ -3,21 +3,33 @@ from openvibe_tool import *
 from private_tool import *
 from CSP import CSPFilter
 import numpy as np
-    
+
+
+def process_receive():
+    while flag:
+        signal = lsl.receiveData()
+        print(signal)
+        signal_ls.append(signal)
+
+def process_classification():
+    while flag:
+        return
+
+
 lsl = LSL()
 lsl.connect()
 signal_ls = []
 
-while True:
-    print(1)
+flag = True
+
+# while True:
     # signal1, t1 = lsl.collectDataByTime(5000)
     # signal2, t2 = lsl.collectDataByTime(5000)
     # signal3, t3 = lsl.collectDataByTime(5000)
-    # signal = lsl.receiveData()
-    # print(signal)
-    print(lsl.inlet)
+    
+    # print(lsl.inlet)
     # amp, freq = fft(signal1, t1)
-    break
+    # break
     # print(1)
     # print(signal1)
     # csp = CSPFilter(signal1, signal2, signal3)
@@ -27,13 +39,3 @@ while True:
     # print(s_fft)
     # print(len(s_fft[0]), len(s_fft[1]))
     # print(csp)
-    # break
-    
-    # 기본 실습에 사용할 간단한 가상 데이터
-
-    X = np.array([[-1,-1], [-2,-1], [-3,-2], [1,1], [2,1], [3,2]])
-    y = np.array([1,1,1,2,2,2])
-    # 기본적인 LDA 구현
-
-    clf = LinearDiscriminantAnalysis()
-    clf.fit(X,y)

@@ -75,6 +75,4 @@ def fft(signal:list, t:float) -> tuple[list]:
         amplitude = abs(s_fft)*(2/len(s_fft)) # 2/len(s)을 곱해줘서 원래의 amp를 구한다.amplitude = abs(s_fft)*(2/len(s_fft)) # 2/len(s)을 곱해줘서 원래의 amp를 구한다.
         frequency = np.fft.fftfreq(len(s_fft), t)
         
-        return (amplitude, frequency)    
-
-# class Graph():
+        return (amplitude, frequency)
