@@ -19,8 +19,6 @@ def process_receive():
 def process_classification():
     while True:
         print("process_classification running")
-        time.sleep(1)
-
 
 lsl = LSL()
 lsl.connect()
