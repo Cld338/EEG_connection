@@ -1,8 +1,8 @@
 from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
 import multiprocessing as mp 
-from local_libopenvibe_tool import *
-from local_lib.private_tool import *
-from local_lib.CSP import CSPFilter
+from local_libs.openvibe_tool import *
+from local_libs.private_tool import *
+from local_libs.CSP import CSPFilter
 import numpy as np
 import time
 
